@@ -12,6 +12,16 @@ body {
   line-height: 1.6;
 }
 
+.video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
 /* Header */
 .cukimay {
   background: rgba(18, 18, 18, 0.9); /* Dark background */
@@ -44,17 +54,24 @@ body {
 }
 
 /* === SECTION UMUM === */
-.section1, .section2, .section3 {
-  background-color: #1c1c1c; /* Dark background */
+.section1,
+.section2,
+.section3 {
+  background-color: rgba(0, 0, 0, 0.3); /* semi transparan */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px); /* untuk Safari */
 }
 
-.section1 .teks, .section2 .teks, .overlay-text {
-  background-color: rgba(0, 0, 0, 0.7); /* Slightly dark background for text */
-  color: #e0e0e0; /* Light text color */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Darker shadow */
+.section1,
+.section2,
+.section3 {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
-.section1, .section2 {
+.section1,
+.section2 {
   position: relative;
   padding: 6rem 1rem 3rem;
   display: flex;
@@ -74,13 +91,13 @@ body {
   transform: scale(1.05);
 }
 
-.section1 {
+/* .section1 {
   background-color: #1c1c1c;
 }
 
 .section2 {
   background-color: #1c1c1c;
-}
+} */
 
 /* === SECTION 1 LAYOUT KHUSUS === */
 .section1 .p1 {
@@ -110,7 +127,9 @@ body {
   backdrop-filter: blur(6px);
   padding: 1.2rem 1.5rem;
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   animation: fadeInText 1s ease-out;
 }
 
@@ -143,7 +162,9 @@ body {
 }
 
 .section2 .teks p {
-  background: rgba(102, 100, 100, 0.85);
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   padding: 1rem 1.5rem;
   border-radius: 15px;
   margin: 0;
@@ -165,33 +186,56 @@ body {
 
 /* === EFEK MELAYANG KACAU === */
 @keyframes floatPhoto {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes floatUpLeft {
-  0% { transform: translateY(0) translateX(0); }
-  100% { transform: translateY(-12px) translateX(-8px); }
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-12px) translateX(-8px);
+  }
 }
 
 @keyframes floatUpRight {
-  0% { transform: translateY(0) translateX(0); }
-  100% { transform: translateY(-12px) translateX(8px); }
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-12px) translateX(8px);
+  }
 }
 
 @keyframes floatUpCenter {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-12px); }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-12px);
+  }
 }
 
-.section2 .teks p:nth-child(3n+1) { animation: floatUpLeft 5s ease-in-out infinite alternate; }
-.section2 .teks p:nth-child(3n+2) { animation: floatUpRight 5s ease-in-out infinite alternate; }
-.section2 .teks p:nth-child(3n)   { animation: floatUpCenter 5s ease-in-out infinite alternate; }
+.section2 .teks p:nth-child(3n + 1) {
+  animation: floatUpLeft 5s ease-in-out infinite alternate;
+}
+.section2 .teks p:nth-child(3n + 2) {
+  animation: floatUpRight 5s ease-in-out infinite alternate;
+}
+.section2 .teks p:nth-child(3n) {
+  animation: floatUpCenter 5s ease-in-out infinite alternate;
+}
 
 .section3 {
   display: flex;
   position: relative;
   height: 100vh;
+  gap: 2rem;
 }
 
 .left-video {
@@ -233,6 +277,7 @@ body {
   border-radius: 20px;
   opacity: 0;
   animation: fadeIn 1.5s ease-out forwards;
+  right: 500px;
 }
 
 @keyframes fadeIn {
@@ -253,6 +298,7 @@ body {
   align-items: center;
   position: relative;
   overflow: hidden;
+  right: 150px;
 }
 
 /* Kontainer untuk gambar yang akan di slide */
@@ -261,6 +307,9 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  max-width: 450px; /* batas maksimal lebar container */
+  max-height: 550px; /* batas maksimal tinggi container */
+  border-radius: 25px;
 }
 
 .sliding-images .slide {
@@ -317,7 +366,6 @@ body {
   }
 }
 
-
 /*--Button--*/
 .next-button {
   position: fixed;
@@ -346,42 +394,45 @@ body {
   background-color: #444;
   transform: scale(1.05);
 }
-  
-  /* === RESPONSIVE === */
-  @media (max-width: 767px) {
-  .section1, .section2 {
-  flex-direction: column;
-  padding: 2rem 1rem;
+
+/* === RESPONSIVE === */
+@media (max-width: 767px) {
+  .section1,
+  .section2 {
+    flex-direction: column;
+    padding: 2rem 1rem;
   }
-  
+
   .section1 .p1,
   .section2 .p1 {
-  flex-direction: column;
-  align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .section1 .teks, .section2 .teks {
-  font-size: 1rem;
-  width: 100%;
+
+  .section1 .teks,
+  .section2 .teks {
+    font-size: 1rem;
+    width: 100%;
   }
-  
+
   .section2 .p1 img {
-  max-width: 90%;
+    max-width: 90%;
   }
-  
-  .left-video, .right-bg {
-  max-width: 100%;
-  flex: 1 1 100%;
-  height: auto;
+
+  .left-video,
+  .right-bg {
+    max-width: 100%;
+    flex: 1 1 100%;
+    height: auto;
   }
-  
+
   .video-wrapper {
-  aspect-ratio: auto;
-  height: auto;
+    aspect-ratio: auto;
+    height: auto;
   }
-  
+
   .overlay-text {
-  font-size: 1rem;
-  padding: 1.2rem;
+    font-size: 1rem;
+    padding: 1.2rem;
   }
-  }
+}

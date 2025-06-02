@@ -1,170 +1,127 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Memori</title>
-  <link rel="stylesheet" href="memories.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memori</title>
+    <link rel="stylesheet" href="memories.css" />
+  </head>
+  <body>
+    <!-- VIDEO LATAR -->
+    <video id="memoryVideo" autoplay loop muted playsinline class="video-bg">
+      <source src="videoplayback.mp4" type="video/mp4" />
+      Browser kamu tidak mendukung video.
+    </video>
 
-  <!-- VIDEO LATAR -->
-  <video id="memoryVideo" autoplay loop muted playsinline class="video-bg">
-    <source src="videoplayback.mp4" type="video/mp4" />
-    Browser kamu tidak mendukung video.
-  </video>
+    <!-- 🪧 Intro -->
+    <div id="intro">
+      <h1>Thankyou For Watching 🎥</h1>
+    </div>
 
-  <!-- 🪧 Intro -->
-  <div id="intro">
-    <h1>Thankyou For Watching 🎥</h1>
-  </div>
+    <!-- 📸 Galeri -->
+    <div id="galeri"></div>
 
-  <!-- 📸 Galeri -->
-  <div id="galeri"></div>
+    <!-- 🧩 Template Gambar/Video -->
+    <template id="template-memori">
+      <img src="img/1.jpg" class="memori-item" loading="lazy" />
+      <img src="img/2.jpg" class="memori-item" loading="lazy" />
+      <img src="img/3.jpg" class="memori-item" loading="lazy" />
+      <img src="img/4.jpg" class="memori-item" loading="lazy" />
+      <img src="img/5.jpg" class="memori-item" loading="lazy" />
+      <img src="img/6.jpg" class="memori-item" loading="lazy" />
+      <img src="img/7.jpg" class="memori-item" loading="lazy" />
+      <img src="img/8.jpg" class="memori-item" loading="lazy" />
+      <img src="img/9.jpg" class="memori-item" loading="lazy" />
+      <img src="img/10.jpg" class="memori-item" loading="lazy" />
+      <img src="img/11.jpg" class="memori-item" loading="lazy" />
+      <img src="img/12.jpg" class="memori-item" loading="lazy" />
+      <img src="img/13.jpg" class="memori-item" loading="lazy" />
+      <img src="img/14.jpg" class="memori-item" loading="lazy" />
+      <img src="img/15.jpg" class="memori-item" loading="lazy" />
+      <img src="img/16.jpg" class="memori-item" loading="lazy" />
+      <img src="img/17.jpg" class="memori-item" loading="lazy" />
+      <img src="img/18.jpg" class="memori-item" loading="lazy" />
+      <img src="img/19.jpg" class="memori-item" loading="lazy" />
+      <img src="img/20.jpg" class="memori-item" loading="lazy" />
+      <img src="img/21.jpg" class="memori-item" loading="lazy" />
+      <img src="img/22.jpg" class="memori-item" loading="lazy" />
+      <img src="img/23.jpg" class="memori-item" loading="lazy" />
+      <img src="img/24.jpg" class="memori-item" loading="lazy" />
+      <img src="img/25.jpg" class="memori-item" loading="lazy" />
+      <img src="img/26.jpg" class="memori-item" loading="lazy" />
+      <img src="img/27.jpg" class="memori-item" loading="lazy" />
+      <img src="img/28.jpg" class="memori-item" loading="lazy" />
+      <img src="img/29.jpg" class="memori-item" loading="lazy" />
+      <img src="img/30.jpg" class="memori-item" loading="lazy" />
+      <img src="img/31.jpg" class="memori-item" loading="lazy" />
+      <img src="img/32.jpg" class="memori-item" loading="lazy" />
+      <img src="img/33.jpg" class="memori-item" loading="lazy" />
+      <img src="img/34.jpg" class="memori-item" loading="lazy" />
+      <img src="img/35.jpg" class="memori-item" loading="lazy" />
+      <img src="img/36.jpg" class="memori-item" loading="lazy" />
+      <img src="img/37.jpg" class="memori-item" loading="lazy" />
+      <img src="img/38.jpg" class="memori-item" loading="lazy" />
+      <img src="img/39.jpg" class="memori-item" loading="lazy" />
+      <img src="img/40.jpg" class="memori-item" loading="lazy" />
+      <img src="img/41.jpg" class="memori-item" loading="lazy" />
+      <img src="img/42.jpg" class="memori-item" loading="lazy" />
+      <img src="img/43.jpg" class="memori-item" loading="lazy" />
+      <img src="img/44.jpg" class="memori-item" loading="lazy" />
+      <img src="img/45.jpg" class="memori-item" loading="lazy" />
+      <img src="img/46.jpg" class="memori-item" loading="lazy" />
+      <img src="img/47.jpg" class="memori-item" loading="lazy" />
+      <img src="img/48.jpg" class="memori-item" loading="lazy" />
+      <img src="img/49.jpg" class="memori-item" loading="lazy" />
+      <img src="img/50.jpg" class="memori-item" loading="lazy" />
+      <img src="img/51.jpg" class="memori-item" loading="lazy" />
+      <img src="img/52.jpg" class="memori-item" loading="lazy" />
+      <img src="img/53.jpg" class="memori-item" loading="lazy" />
+      <img src="img/54.jpg" class="memori-item" loading="lazy" />
+      <img src="img/55.jpg" class="memori-item" loading="lazy" />
+      <img src="img/56.jpg" class="memori-item" loading="lazy" />
+      <img src="img/57.jpg" class="memori-item" loading="lazy" />
+      <img src="img/58.jpg" class="memori-item" loading="lazy" />
+      <img src="img/59.jpg" class="memori-item" loading="lazy" />
+      <img src="img/60.jpg" class="memori-item" loading="lazy" />
+      <img src="img/61.jpg" class="memori-item" loading="lazy" />
+      <img src="img/62.jpg" class="memori-item" loading="lazy" />
+      <img src="img/63.jpg" class="memori-item" loading="lazy" />
+      <img src="img/64.jpg" class="memori-item" loading="lazy" />
+      <img src="img/65.jpg" class="memori-item" loading="lazy" />
+      <img src="img/66.jpg" class="memori-item" loading="lazy" />
+      <img src="img/67.jpg" class="memori-item" loading="lazy" />
+      <img src="img/68.jpg" class="memori-item" loading="lazy" />
+      <img src="img/69.jpg" class="memori-item" loading="lazy" />
+      <img src="img/70.jpg" class="memori-item" loading="lazy" />
+      <img src="img/71.jpg" class="memori-item" loading="lazy" />
+      <img src="img/72.jpg" class="memori-item" loading="lazy" />
+      <img src="img/73.jpg" class="memori-item" loading="lazy" />
+      <img src="img/74.jpg" class="memori-item" loading="lazy" />
+      <img src="img/75.jpg" class="memori-item" loading="lazy" />
+      <img src="img/76.jpg" class="memori-item" loading="lazy" />
+      <img src="img/77.jpg" class="memori-item" loading="lazy" />
+      <img src="img/78.jpg" class="memori-item" loading="lazy" />
+      <img src="img/79.jpg" class="memori-item" loading="lazy" />
+      <img src="img/80.jpg" class="memori-item" loading="lazy" />
+      <img src="img/81.jpg" class="memori-item" loading="lazy" />
+      <img src="img/82.jpg" class="memori-item" loading="lazy" />
+      <img src="img/83.jpg" class="memori-item" loading="lazy" />
+      <img src="img/84.jpg" class="memori-item" loading="lazy" />
+      <img src="img/85.jpg" class="memori-item" loading="lazy" />
+      <img src="img/86.jpg" class="memori-item" loading="lazy" />
+      <img src="img/87.jpg" class="memori-item" loading="lazy" />
+      <img src="img/88.jpg" class="memori-item" loading="lazy" />
+      <img src="img/89.jpg" class="memori-item" loading="lazy" />
+      <img src="img/90.jpg" class="memori-item" loading="lazy" />
+      <img src="img/91.jpg" class="memori-item" loading="lazy" />
+      <img src="img/92.jpg" class="memori-item" loading="lazy" />
+      <img src="img/93.jpg" class="memori-item" loading="lazy" />
+      <img src="img/94.jpg" class="memori-item" loading="lazy" />
+      <img src="img/95.jpg" class="memori-item" loading="lazy" />
+      <img src="img/99.JPEG" class="memori-item" loading="lazy" />
+      <img src="img/100.JPEG" class="memori-item" loading="lazy" />
+    </template>
 
-  <!-- 🧩 Template Gambar/Video -->
-  <template id="template-memori">
-    <img src="img/rame.jpg" class="memori-item" loading="lazy" />
-    <img src="img/rame4.jpg" class="memori-item" loading="lazy" />
-    <video src="img/Video WhatsApp 2025-05-17 pukul 02.33.34_7905453f.mp4" class="memori-item" autoplay muted loop></video>
-    <img src="img/bareng3.jpg" class="memori-item" loading="lazy" />
-    <img src="img/bareng1.jpg" class="memori-item" loading="lazy" />
-    <img src="img/bareng2.jpg" class="memori-item" loading="lazy" />
-    <img src="img/bareng4.jpg" class="memori-item" loading="lazy" />
-    <video src="nyanyi1.mp4" class="memori-item" autoplay muted loop></video>
-    <img src="img/10 (1).jpg" class="memori-item" loading="lazy" />
-    <img src="img/10 (2).jpg" class="memori-item" loading="lazy" />
-    <img src="img/10 (3).jpg" class="memori-item" loading="lazy" />
-    <img src="img/10 (4).jpg" class="memori-item" loading="lazy" />
-     <video src="img/3 (1).mp4" class="memori-item" autoplay muted loop></video>
-    <img src="img/12 (1).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (2).jpg" class="memori-item" loading="lazy" />
-     <video src="img/3 (2).mp4" class="memori-item" autoplay muted loop></video>
-    <img src="img/12 (3).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (4).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (5).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (6).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (7).jpg" class="memori-item" loading="lazy" />
-     <video src="img/3 (4).mp4" class="memori-item" autoplay muted loop></video>
-    <img src="img/12 (8).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (9).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (10).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (11).jpg" class="memori-item" loading="lazy" />
-    <img src="img/10 (3).jpg" class="memori-item" loading="lazy" />
-    <video src="img/3 (3).mp4" class="memori-item" autoplay muted loop></video>
-    <img src="img/12 (13).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (14).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (15).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (16).jpg" class="memori-item" loading="lazy" />
-     <video src="img/Video WhatsApp 2025-05-17 pukul 02.33.34_7905453f.mp4" class="memori-item" autoplay muted loop></video>
-    <img src="img/12 (17).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (18).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (19).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (20).jpg" class="memori-item" loading="lazy" />
-    <video src="nyanyi1.mp4" class="memori-item" autoplay muted loop></video>
-    <img src="img/12 (21).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (22).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (23).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (24).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (25).jpg" class="memori-item" loading="lazy" />
-    <video src="img/3 (1).mp4" class="memori-item" autoplay muted loop></video>
-    <img src="img/12 (26).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (27).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (28).jpg" class="memori-item" loading="lazy" />
-    <video src="img/3 (2).mp4" class="memori-item" autoplay muted loop></video>
-    <img src="img/12 (29).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (30).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (31).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (32).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (33).jpg" class="memori-item" loading="lazy" />
-    <video src="img/3 (3).mp4" class="memori-item" autoplay muted loop></video>
-    <img src="img/12 (34).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (35).jpg" class="memori-item" loading="lazy" />
-    <img src="img/12 (36).jpg" class="memori-item" loading="lazy" />
-    <video src="img/3 (4).mp4" class="memori-item" autoplay muted loop></video>
-  </template>
-
-  <script>
-   document.addEventListener('DOMContentLoaded', () => {
-  const intro = document.getElementById('introText') || document.getElementById('intro');
-  const gallery = document.getElementById('galeri');
-  const template = document.getElementById('template-memori');
-
-  // Ulang template beberapa kali biar panjang
-  const repeatCount = 3 ;
-  for (let i = 0; i < repeatCount; i++) {
-    const clone = template.content.cloneNode(true);
-    gallery.appendChild(clone);
-  }
-
-  // Ambil semua elemen setelah diulang
-  const items = gallery.querySelectorAll('.memori-item');
-
-  // Fade out intro
-  setTimeout(() => {
-    intro.classList.add('fade-out');
-  }, 4000);
-
-  // Sembunyikan intro dari layout
-  setTimeout(() => {
-    intro.style.display = 'none';
-  }, 5000);
-
-  // Setelah intro hilang, tampilkan galeri
-  setTimeout(() => {
-    gallery.classList.add('show');
-
-    // Delay lalu acak posisi item
-    setTimeout(() => {
-      items.forEach(item => {
-        const offsetX = Math.random() * 400 - 200;
-        const offsetY = Math.random() * 400 - 200;
-        const rotate = Math.random() * 60 - 30;
-        item.style.transition = 'transform 1s ease, opacity 1s ease';
-        item.style.opacity = '1';
-        item.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(${rotate}deg) scale(1.1)`;
-      });
-
-      // Rapihin satu per satu dengan delay lebih lama
-      setTimeout(() => {
-        items.forEach((item, i) => {
-          setTimeout(() => {
-            item.style.transform = 'translate(0, 0) rotate(0deg) scale(1)';
-          }, i * 800); // bisa diubah ke 500, 700, 1000 ms
-        });
-
-        // Auto scroll mulai
-        let currentScroll = window.scrollY;
-        let scrollSpeed = 0.6;
-        let scrolling = true;
-
-        function autoScroll() {
-          if (!scrolling) return;
-          currentScroll += scrollSpeed;
-          if (currentScroll < document.body.scrollHeight - window.innerHeight) {
-            window.scrollTo(0, currentScroll);
-            requestAnimationFrame(autoScroll);
-          }
-        }
-
-        setTimeout(() => autoScroll(), 500);
-        window.addEventListener('wheel', () => scrolling = false);
-        window.addEventListener('touchstart', () => scrolling = false);
-      }, 2000);
-    }, 1000);
-  }, 5200);
-});
-
-// Cek preferensi unmute
-window.addEventListener('load', () => {
-  const video = document.getElementById('memoryVideo');
-  if (localStorage.getItem('unmute') === 'true' && video) {
-    video.muted = false;
-    video.play().catch(err => console.log('Autoplay gagal:', err));
-  }
-});
-
-  </script>
-
-</body>
+    <script src="memo.js"></script>
+  </body>
 </html>

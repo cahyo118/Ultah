@@ -53,21 +53,26 @@ body {
 }
 
 .memori-item {
-  width: 100%;
-  aspect-ratio: 1 / 1;             /* Bikin kotak persegi */
+  width: 150px;
+  aspect-ratio: 1 / 1;
   height: auto;
-  border-radius: 12px;
+  border-radius: 8px;
   object-fit: cover;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   opacity: 0;
   transition: transform 1s ease, opacity 1s ease;
 }
 
-video.memori-item {
-  max-width: 100%;
-  height: auto;
-}
-
 .memori-wrap {
   display: contents;
+}
+
+@media (max-width: 768px) {
+  #galeri {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .memori-item {
+    width: 100px;
+  }
 }

@@ -15,10 +15,10 @@
 body {
   margin: 0;
   padding: 0;
-  background: url('img/kenduri1.jpg');
+  background-image: url("img/1.jpg");
   background-size: cover;
   background-position: center;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Crimson Text', serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,45 +26,52 @@ body {
   height: 100vh;
   color: #333;
   overflow: hidden;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="40" width="40"><text y="32" font-size="32">❤️</text></svg>') 16 16, auto;
 }
 
-.cukimay {
+.birthday-card {
   text-align: center;
-  background: rgba(147, 143, 143, 0.8); /* Efek transparansi untuk teks */
+  /* background: rgba(147, 143, 143, 0.8); Efek transparansi untuk teks */
   padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  /* border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); */
   animation: fadeIn 1.2s ease-out;
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
-  color: #0086b3;
+  color: #ffffff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 .highlighted-text {
-  color: #ff2600; /* Ganti warna sesuai keinginan */
+  color: #ffee00; /* Ganti warna sesuai keinginan */
 }
 
-.rocket {
+.button-wrapper {
   margin: 1.5rem 0;
 }
 
-.star-button {
-  font-size: 2rem;
-  background-color: #ffcc00;
+.surprise-button {
   border: none;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  cursor: url(icons8-rocket-40.png), auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  background-color: palevioletred;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 12px 80px;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="40" width="40"><text y="32" font-size="32">❤️</text></svg>') 16 16, auto;
 }
 
-.star-button:hover {
+.surprise-button:hover {
   transform: scale(1.1);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  letter-spacing: 3px;    
 }
 
 .launching {
@@ -99,5 +106,32 @@ p {
   }
   100% {
     opacity: 0;
+  }
+}
+
+/* Mobile - max 430px (contoh: iPhone 13) */
+@media (max-width: 429px) {
+  body {
+    padding: 1rem;
+    height: auto;
+    background-position: center;
+  }
+
+  .birthday-card {
+    padding: 1rem;
+    /* border-radius: 15px; */
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .surprise-button {
+    font-size: 1.4rem;
+    padding: 0.7rem 1.2rem;
+  }
+
+  p {
+    font-size: 1rem;
   }
 }
